@@ -5,9 +5,11 @@ const path = require('path');
 const base = {
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
     devServer: {
-        contentBase: false,
+        contentBase: path.resolve(__dirname, 'src/playground'),
+        watchContentBase: true,
         host: '0.0.0.0',
-        port: process.env.PORT || 8073
+        port: process.env.PORT || 8073,
+        publicPath: '/'
     },
     devtool: 'cheap-module-source-map',
     output: {
