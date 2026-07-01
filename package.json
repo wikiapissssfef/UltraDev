@@ -12,7 +12,7 @@
   "main": "./src/index.js",
   "browser": "./src/index.js",
   "scripts": {
-    "build": "webpack --progress --colors --bail",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --progress --colors --bail",
     "coverage": "tap ./test/{unit,integration}/*.js --coverage --coverage-report=lcov",
     "deploy": "touch playground/.nojekyll && gh-pages -t -d playground -m \"Build for $(git log --pretty=format:%H -n1)\"",
     "docs": "jsdoc -c .jsdoc.json",
@@ -21,7 +21,6 @@
     "lint": "exit 0 || eslint . && format-message lint src/**/*.js",
     "prepublishOnly": "in-publish && npm run build || not-in-publish",
     "start": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server",
-    "deploy": "touch playground/.nojekyll && gh-pages -t -d playground -m \"Build for $(git log --pretty=format:%H -n1)\"",
     "deploy:gh-pages": "npm run build && npm run deploy",
     "tap": "tap ./test/{unit,integration}/*.js",
     "tap:unit": "tap ./test/unit/*.js",
