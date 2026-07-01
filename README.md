@@ -8,6 +8,15 @@ See https://github.com/TurboWarp/scratch-gui/wiki/Getting-Started to setup the c
 
 If you just want to play with the VM then it's the same process as upstream scratch-vm.
 
+Run the local web UI with:
+
+```bash
+NODE_OPTIONS=--openssl-legacy-provider npm start -- --host 0.0.0.0 --open false
+```
+
+Then open `http://localhost:8073/` in your browser.
+
+
 Extension authors
 If you only use the standard reporter, boolean, and command block types, everything should just work without any changes.
 
