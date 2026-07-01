@@ -16,6 +16,14 @@ NODE_OPTIONS=--openssl-legacy-provider npm start -- --host 0.0.0.0 --open false
 
 Then open `http://localhost:8073/` in your browser.
 
+To publish the playground to GitHub Pages, build and deploy the `playground` folder:
+
+```bash
+npm run deploy:gh-pages
+```
+
+This requires the repository to have a valid GitHub remote and branch permissions.
+
 
 Extension authors
 If you only use the standard reporter, boolean, and command block types, everything should just work without any changes.
